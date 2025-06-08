@@ -1,8 +1,14 @@
 import { GoogleGenAI } from '@google/genai';
 
+import dotenv from 'dotenv';
+dotenv.config(); // Load .env values
+
+const geminiAPIKey = process.env.GEMINI_API_KEY;
+
+
 async function Chat(prompt) {
   const ai = new GoogleGenAI({
-    apiKey: "AIzaSyCe9TvBfTxEsUoA9yTk-sg8r2hux0SgxTE", // Remove this for security in production
+    apiKey: geminiAPIKey, // Remove this for security in production
   });
 
   const config = {
